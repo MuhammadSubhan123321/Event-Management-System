@@ -5,67 +5,67 @@ This project is a Database + UI Prototype for managing events, venues, attendees
 📌 Features Implemented
 ✅ Database (MySQL)
 
-Created a relational database Events with proper normalization.
+**Created a relational database Events with proper normalization.**
 
-Tables included:
+-Tables included:
 
-Event (details of each event)
+1-Event (details of each event)
 
-Attendee (registered users for events)
+2-Attendee (registered users for events)
 
-Venue (locations for hosting events)
+3-Venue (locations for hosting events)
 
-Organizer (event organizers)
+4-Organizer (event organizers)
 
-Features covered:
+5-Features covered:
 
-Primary & Foreign Keys (relationships among Event, Venue, Attendee, Organizer)
+**Primary & Foreign Keys (relationships among Event, Venue, Attendee, Organizer)**
 
-Constraints (UNIQUE, NOT NULL, FOREIGN KEY)
+-Constraints (UNIQUE, NOT NULL, FOREIGN KEY)
 
-ALTER TABLE (add, rename, drop columns)
+-ALTER TABLE (add, rename, drop columns)
 
-JOINS (INNER, LEFT, RIGHT, CROSS, UNION)
+-JOINS (INNER, LEFT, RIGHT, CROSS, UNION)
 
-Views (EventDetails for simplified querying)
+-Views (EventDetails for simplified querying)
 
-Stored Procedures (GetEventDetailsById)
+-Stored Procedures (GetEventDetailsById)
 
-Indexes (idx_event_date for faster search by date)
+-Indexes (idx_event_date for faster search by date)
 
-DML Commands (INSERT, UPDATE, DELETE)
+-DML Commands (INSERT, UPDATE, DELETE)
 
-Aggregate Functions (COUNT, GROUP BY, HAVING)
+-Aggregate Functions (COUNT, GROUP BY, HAVING)
 
-Filtering & Sorting (LIKE, LIMIT, ORDER BY)
+-Filtering & Sorting (LIKE, LIMIT, ORDER BY)
 
 ✅ ERD (Entity Relationship Diagram)
 
-Designed with draw.io.
+**Designed with draw.io.**
 
-Shows relationships between:
+-Shows relationships between:
 
-Event ↔ Venue
+-Event ↔ Venue
 
-Event ↔ Organizer
+-Event ↔ Organizer
 
-Event ↔ Attendee
+-Event ↔ Attendee
 
-Ensures referential integrity and 1-to-many relationships.
+-Ensures referential integrity and 1-to-many relationships.
 
 ✅ UI Prototypes (Figma)
 
-Designed interface mockups for:
+**Designed interface mockups for:**
 
-Login Page
+-Welcome Page
 
-Signup Page
+-Login Page
 
-Welcome Page
+-Signup Page
 
-Free Trial Page
+-Free Trial Page
 
-Ensures a user-friendly flow for event participants and organizers.
+**Ensures a user-friendly flow for event participants and organizers.**
 
 📂 Database Schema
 Event Table
@@ -84,38 +84,47 @@ Status	            VARCHAR(50)	      upcoming / completed
 
 📊 Example Queries
 
-List all attendees of an event:
+**List all attendees of an event:**
 
 SELECT a.Name, a.Email, e.EventName
 FROM Attendee a
 JOIN Event e ON a.EventID = e.EventID;
 
+_________________________________________
 
 Find venues with capacity greater than 2000:
 
+_________________________________________
+
+
 SELECT * FROM Venue WHERE Capacity > 2000;
 
+_________________________________________
 
 Get all events with their venues:
+
+_________________________________________
 
 SELECT e.EventName, e.EventDate, v.VenueName
 FROM Event e
 JOIN Venue v ON e.VenueID = v.VenueID;
 
+_________________________________________
 
-Get number of attendees per event (with filter):
+**Get number of attendees per event (with filter):**
 
 SELECT EventID, COUNT(*) AS num_attendees
 FROM Attendee
 GROUP BY EventID
 HAVING COUNT(*) > 1;
 
+_________________________________________
 
-Call stored procedure:
+**Call stored procedure:**
 
 CALL GetEventDetailsById(101);
 
-🚀 Tools Used
+🚀 **Tools Used**
 
 MySQL – Database creation and querying
 
@@ -123,17 +132,17 @@ draw.io – Entity Relationship Diagram (ERD)
 
 Figma – UI Wireframes (Login, Signup, Welcome, Free Trial)
 
-📌 Learning Outcomes
+📌 **Learning Outcomes**
 
-Designed a complete database system for event management.
+-Designed a complete database system for event management.
 
-Understood normalization, relationships, joins, and constraints.
+-Understood normalization, relationships, joins, and constraints.
 
-Implemented views, indexes, and stored procedures.
+-Implemented views, indexes, and stored procedures.
 
-Practiced database operations with sample data.
+-Practiced database operations with sample data.
 
-Built UI mockups to connect backend logic with frontend design.
+-Built UI mockups to connect backend logic with frontend design.
 
 🔥 This project can be extended by connecting the MySQL backend with a web frontend (using Node.js, PHP, or Python Flask/Django) to make it a fully functional Event Management System.
 
