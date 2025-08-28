@@ -146,6 +146,8 @@ Figma – UI Wireframes (Login, Signup, Welcome, Free Trial)
 
 🔥 This project can be extended by connecting the MySQL backend with a web frontend (using Node.js, PHP, or Python Flask/Django) to make it a fully functional Event Management System.
 
+👨‍💻 **Developer**
 
+Muhammad Subhan – Full-Stack Developer (in progress)
 
 
